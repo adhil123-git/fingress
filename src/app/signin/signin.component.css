@@ -1,0 +1,38 @@
+.wholediv {
+    background-color: aliceblue;
+    display: flex;
+    margin-top: 150px;
+    max-width: fit-content;
+    margin-left: 350px;
+    padding: 40px;
+
+}
+
+.imgdiv {
+
+    box-sizing: border-box;
+
+}
+
+.formdiv {
+    margin-left: 40px;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+button{
+    margin-top:10px;
+    margin-left: 70px;
+    padding: 10px;
+    background-color: rgb(73, 192, 73);
+    border-radius: 5px;
+    border:none;
+}
+button:hover{
+    transform: scale(0.9);
+}

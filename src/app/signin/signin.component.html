@@ -1,0 +1,29 @@
+<div class="wholediv">
+  <div class="imgdiv">
+    <img src="assets/loginpage.png" style="height: 300px;width: 300px;border-radius: 5px;">
+  </div>
+    <div class="formdiv">
+  
+        <form [formGroup]="signIn" (ngSubmit)="onSubmit()">
+            
+            <input
+            type="text"
+            placeholder="orginCode"
+            formControlName="orgCode"
+          /><br>
+            <input
+            type="text"
+            placeholder="loginId"
+            formControlName="loginId"
+          /><br>
+            <input
+            type="password"
+            placeholder="password"
+            formControlName="password"
+          /><br>
+          <button  type="submit" class="btn" >Login</button>
+        </form>
+        <p>Dont't have an account  ? <a routerLink="/register">     Register</a></p>
+    </div>
+</div>
+
