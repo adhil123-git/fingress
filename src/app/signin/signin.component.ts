@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -12,31 +13,33 @@ export class SigninComponent {
   orgCode = '';
   loginId = '';
   password = '';
+  error = '';
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
   onSubmit(form: any) {
     if (form.valid) {
-      const payload = {
+      const logindata = {
         orgCode: this.orgCode,
         loginId: this.loginId,
-        keyword: this.password 
+        keyword: this.password
       };
+      console.log(logindata);
+      this.authService.signIn(logindata).subscribe(
+        {
+          next: (response) => {
+            let status = response.status;
+            alert(status);
+            let token = response.session.apiAccessSessionToken.split(" ")[1];
+            localStorage.setItem('token', token);
+            this.router.navigate(['/landingpage']);
+          },
+          error: (error) => {
+            console.error('Login failed', error);
+            this.error = 'Login failed. Please try again.';
+          }
 
-      this.authService.login(payload).subscribe(
-        (response: any) => {
-          alert('Successfully logged in');
-
-          // Optional: Store token if needed
-          localStorage.setItem('token', response.session.apiAccessSessionToken);
-
-          this.router.navigate(['/landingpage']);
-        },
-        (error) => {
-          alert('Login failed. Please try again.');
-          console.error(error);
-        }
-      );
+        });
     }
   }
 }

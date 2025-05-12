@@ -1,5 +1,30 @@
-<div class="container">
-    <div class="item">Header</div>
-    <div class="item">Sidebar</div>
-    <div class="item">Content</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+<div>
+  <div class="header">
+    <h1>Fingress Digital Solution</h1>
   </div>
+  <div class="sidebar">
+    <ul>
+      <li>
+        <button type="button" (click)="navigateTo('/landingpage/onboarduser')">
+          <i class="fa fa-user-plus"></i> Create User
+        </button>
+      </li>
+      <li>
+        <button type="button" (click)="navigateTo('/landingpage/listuser')">
+          <i class="fa fa-users"></i> User List
+        </button>
+      </li>
+      <li>
+        <button type="button" (click)="signout()">
+          <i class="fa fa-sign-out-alt"></i> Sign Out
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

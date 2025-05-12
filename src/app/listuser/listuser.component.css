@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+  }
+  .mat-column-Name{
+    width: 30px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    text-align: center;
+  }
+  .mat-column-UserId {
+    width: 30px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    text-align: center;
+  }
+  .mat-column-Partycode {
+    width: 30px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    text-align: center;
+  }
+  .mat-column-Status {
+    width: 30px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    text-align: center;
+  }
+  .mat-column-PartyName{
+    width: 30px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    text-align: center;
+  }
+  .mat-column-updatedOn{
+    width: 30px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    text-align: center;
+  }
+ 

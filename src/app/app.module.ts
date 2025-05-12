@@ -5,17 +5,31 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListuserComponent } from './listuser/listuser.component';
+import { OnboarduserComponent } from './onboarduser/onboarduser.component';
+import { RouterModule } from '@angular/router';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent
+    SigninComponent,
+    ListuserComponent,
+    OnboarduserComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

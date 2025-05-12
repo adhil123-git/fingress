@@ -3,29 +3,47 @@
     <img src="assets/loginpage.png" style="height: 300px;width: 300px;border-radius: 5px;">
   </div>
   <div class="formdiv">
-    <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
-      <input
-        type="text"
-        placeholder="orginCode"
-        name="orgCode"
-        [(ngModel)]="orgCode"
-        required
-      /><br>
-      <input
-        type="text"
-        placeholder="loginId"
-        name="loginId"
-        [(ngModel)]="loginId"
-        required
-      /><br>
-      <input
-        type="password"
-        placeholder="password"
-        name="password"
-        [(ngModel)]="password"
-        required
-      /><br>
-      <button type="submit" class="btn" [disabled]="!signInForm.valid">Login</button>
+    <form #signinForm="ngForm" (ngSubmit)="onSubmit(signinForm)">
+      <div>
+       
+        <input
+          type="text"
+          id="orgCode"
+          name="orgCode"
+          placeholder="OrgCode"
+          [(ngModel)]="orgCode"
+          required
+        />
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="loginId"
+          name="loginId"
+          placeholder="LoginId"
+          [(ngModel)]="loginId"
+          required
+        />
+      </div>
+
+      <div>
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+
+      <div *ngIf="error" class="error">
+        {{ error }}
+      </div>
+
+      <button type="submit" [disabled]="signinForm.invalid">Sign In</button>
     </form>
     <p>Don't have an account? <a routerLink="/register">Register</a></p>
   </div>

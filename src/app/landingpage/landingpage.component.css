@@ -1,33 +1,65 @@
-.container {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar content";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 250px 1fr;
-  height: 100vh;
-  background-color: #4CAF50;
+.header {
+  background-color: rgb(244, 244, 244);
+  padding: 3px;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-.header {
-  grid-area: header;
-  background-color: #4CAF50;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
 
 .sidebar {
-  grid-area: sidebar;
-  background-color: #4e1212;
-  padding: 1rem;
-  border-right: 1px solid #ddd;
+  background-color: #d1d8e0;
+  width: 200px;
+  height: calc(100% - 50px);
+  position: fixed;
+  left: 0;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar button,
+.sidebar a {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar button i,
+.sidebar a i {
+  margin-right: 8px;
+}
+
+.sidebar button:hover,
+.sidebar a:hover {
+  color: #007bff;
+}
+
+
 .content {
-  grid-area: content;
-  padding: 1rem;
-    background-color: #c21717;
+  margin-left: 200px;
+  margin-top: 50px;
+  padding: 20px;
+  height: calc(100% - 50px);
+  overflow-y: auto;
 }
