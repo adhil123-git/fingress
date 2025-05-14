@@ -12,14 +12,21 @@ import { RouterModule } from '@angular/router';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-
+import { CustomerlistComponent } from './customerlist/customerlist.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButton } from '@angular/material/button';
+import { ModifyComponent } from './modify/modify.component';
+import { ModifycustomerComponent } from './modifycustomer/modifycustomer.component';
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
     ListuserComponent,
     OnboarduserComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    CustomerlistComponent,
+    ModifyComponent,
+    ModifycustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,9 @@ import {MatTableModule} from '@angular/material/table';
     FontAwesomeModule,
     RouterModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

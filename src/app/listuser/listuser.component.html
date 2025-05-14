@@ -1,30 +1,25 @@
-<table mat-table [dataSource]="usersList" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
  
-  <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let user"> {{ user.firstName }} {{ user.lastName }} </td>
-  </ng-container>
+ 
 
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let user">{{user.STATUS_CODE}} </td>
+  </ng-container>
 
   <ng-container matColumnDef="UserId">
-    <th mat-header-cell *matHeaderCellDef> UserId </th>
-    <td mat-cell *matCellDef="let user"> {{ user.UUID }} </td>
-  </ng-container>
-
-
-  <ng-container matColumnDef="Partycode">
-    <th mat-header-cell *matHeaderCellDef> Partycode </th>
+    <th mat-header-cell *matHeaderCellDef>UserId</th>
     <td mat-cell *matCellDef="let user"> {{ user.PARTY_CODE }} </td>
   </ng-container>
 
-  <ng-container matColumnDef="Status">
-    <th mat-header-cell *matHeaderCellDef> Status</th>
+  <ng-container matColumnDef="ActiveSession">
+    <th mat-header-cell *matHeaderCellDef> Active Session</th>
     <td mat-cell *matCellDef="let user"> {{ user.ACTIVE_CODE}} </td>
   </ng-container>
 
 
-  <ng-container matColumnDef="PartyName">
-    <th mat-header-cell *matHeaderCellDef> PartyName </th>
+  <ng-container matColumnDef="Username">
+    <th mat-header-cell *matHeaderCellDef>Username</th>
     <td mat-cell *matCellDef="let user"> {{ user.PARTY_NAME}} </td>
   </ng-container>
 
@@ -32,9 +27,21 @@
     <th mat-header-cell *matHeaderCellDef> updatedOn </th>
     <td mat-cell *matCellDef="let user"> {{ user.LAST_UPDATED_ON}} </td>
   </ng-container>
+ 
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let user"><button mat-button class="edit"  (click)="navigateToModify(user)">✎</button>
+    <button mat-button class="delete"  (click)="deleterow(user)" >🗑️</button> </td>
+  </ng-container>
 
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"  class="header-style"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+<mat-paginator 
+ [pageSizeOptions]="[ 10, 20,30]"
+showFirstLastButtons>
+</mat-paginator>
+

@@ -1,20 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listuser',
   templateUrl: './listuser.component.html',
   styleUrls: ['./listuser.component.css']
 })
-export class ListuserComponent implements OnInit {
-  displayedColumns: string[] = ['Name', 'UserId', 'Partycode', 'PartyName','Status','updatedOn'];
-usersList: any[] = [];
+export class ListuserComponent implements OnInit, AfterViewInit {
+  displayedColumns: string[] = ['Username', 'UserId', 'status', 'ActiveSession', 'updatedOn', 'action'];
 
-  constructor(private authService: AuthService) {}
+  dataSource = new MatTableDataSource<any>(); 
+ 
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator; 
+
+  constructor(private authService: AuthService, private router:Router) {}
 
   ngOnInit(): void {
-    this.fetchUsers();
+    this.fetchUsers(); 
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator; 
   }
 
   fetchUsers(): void {
@@ -28,7 +38,7 @@ usersList: any[] = [];
         }
       ],
       pagination: {
-        pageSize: 20,
+        pageSize: 1000,
         pageIndex: 0
       },
       sorting: {
@@ -37,14 +47,33 @@ usersList: any[] = [];
       }
     };
 
-    this.authService.fetchtable(tabledata).subscribe({
+    this.authService.fetchtableuser(tabledata).subscribe({
       next: (res: any) => {
-        this.usersList = res.usersList;
+        this.dataSource.data = res.usersList; 
       },
       error: (err: any) => {
-        console.error('Error fetching users:', err);
-        alert('An error occurred while fetching users.');
+        console.error(err);
+        alert('Error during fetching the user list');
       }
     });
   }
+
+  deleterow(row: any): void {
+    const currentdata = this.dataSource.data;
+    this.dataSource.data = currentdata.filter(user => user !== row); 
+    alert('User deleted successfully');
+  }
+
+
+navigateToModify(user: any): void {
+  this.router.navigate(['/landingpage/modify'], { queryParams: {
+      userName: user.PARTY_NAME,
+      userId: user.PARTY_CODE
+    }}); 
 }
+
+}
+
+
+
+

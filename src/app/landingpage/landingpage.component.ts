@@ -12,21 +12,23 @@ export class LandingpageComponent {
   token = localStorage.getItem('token')
   
   getToken = {
-    apiAccessSessionToken: `Bearer ${this.token}`
+    apiAccessSessionToken: `${this.token}`
   }
 signout(){
   this.apiservice.SignOut(this.getToken).subscribe({
     next: (response) => {
       localStorage.removeItem('token');
       this.router.navigate(['/signin']);
-      console.log(response);
       alert(response.message);
     },
     error: (err) => {
       console.log(err);
+  
     }
   });
 }
+
+
 navigateTo(route: string) {
   this.router.navigate([route]);
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { AuthService } from '../auth.service';
 import { NgForm } from '@angular/forms';
 @Component({
@@ -24,6 +23,12 @@ export class OnboarduserComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit(onboardingForm: NgForm){
+
+    if (onboardingForm.invalid) {
+    onboardingForm.form.markAllAsTouched();
+    return; 
+  }
+
     if (onboardingForm.valid) {
 
       const sendingdata = {
@@ -45,17 +50,17 @@ export class OnboarduserComponent {
 console.log(sendingdata);
       this.authService. onBoarding(sendingdata).subscribe({
         next: (response: any) => {
-          alert(response.status)
+          alert(response.message)
           onboardingForm.reset();
         },
-        error: (err: any) => {  
-          console.error( err);
+       
+        
+        error: () => {
           alert('error while onboarding.');
         }
+       
       });
     } 
-    else {
-      alert('Please fill out all required fields correctly.');
-    }
+     
   }}
   

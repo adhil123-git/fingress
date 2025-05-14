@@ -1,42 +1,26 @@
-table {
-    width: 100%;
-  }
- 
- 
-  .mat-column-Username {
+ .mat-column-emailaddress {
     width: 30px;
-    
     border-bottom: 1px solid;
     text-align: center;
   }
 
-  .mat-column-UserId{
+ .mat-column-Partycode {
     width: 30px;
-   
     border-bottom: 1px solid;
     text-align: center;
   }
-  .mat-column-updatedOn{
+ .mat-column-action{
     width: 30px;
- 
     border-bottom: 1px solid;
     text-align: center;
   }
-  .mat-column-status{
+ .mat-column-PartyName{
     width: 30px;
-  
     border-bottom: 1px solid;
     text-align: center;
   }
-  .mat-column-ActiveSession{
+ .mat-column-Mobilenumber{
     width: 30px;
-    
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .mat-column-action{
-    width: 30px;
-  
     border-bottom: 1px solid;
     text-align: center;
   }

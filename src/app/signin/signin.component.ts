@@ -17,28 +17,34 @@ export class SigninComponent {
 
   constructor(private router: Router, private authService: AuthService) { }
 
-  onSubmit(form: any) {
-    if (form.valid) {
+  onSubmit(signinForm: NgForm) {
+
+    if (signinForm.invalid) {
+    signinForm.form.markAllAsTouched();
+    return; 
+  }
+  
+    if (signinForm.valid) {
       const logindata = {
         orgCode: this.orgCode,
         loginId: this.loginId,
         keyword: this.password
       };
+
       console.log(logindata);
       this.authService.signIn(logindata).subscribe(
         {
           next: (response) => {
             let status = response.status;
             alert(status);
-            let token = response.session.apiAccessSessionToken.split(" ")[1];
+            let token = response.session.apiAccessSessionToken;
             localStorage.setItem('token', token);
             this.router.navigate(['/landingpage']);
           },
           error: (error) => {
             console.error('Login failed', error);
-            this.error = 'Login failed. Please try again.';
+            this.error = error.error.message ;
           }
-
         });
     }
   }

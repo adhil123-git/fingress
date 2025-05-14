@@ -1,4 +1,4 @@
-// auth.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,10 +24,22 @@ export class AuthService {
     })
     return this.http.post(`${this.apiUrl}/onboarding/submit`, data, { headers });
   }
-  fetchtable(data: any): Observable<any> {
+  fetchtableuser(data: any): Observable<any> {
     const headers = new HttpHeaders({
       "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
     })
     return this.http.post(`${this.apiUrl}/user/list`, data, { headers });
+  }
+  fetchtablecustomer(data: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    })
+    return this.http.post(`${this.apiUrl}/customer/list`, data, { headers });
+  }
+  modifycustomer(data: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    })
+    return this.http.post(`${this.apiUrl}/customer/modify`, data, { headers });
   }
 }

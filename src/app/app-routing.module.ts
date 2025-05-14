@@ -5,18 +5,25 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SigninComponent } from './signin/signin.component';
 import { ListuserComponent } from './listuser/listuser.component';
 import { OnboarduserComponent } from './onboarduser/onboarduser.component';
+import { CustomerlistComponent } from './customerlist/customerlist.component';
+import { ModifyComponent } from './modify/modify.component';
+import { ModifycustomerComponent } from './modifycustomer/modifycustomer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'register', component: RegisterComponent },
+
   {
     path: 'landingpage',
     component: LandingpageComponent,
     children: [
       { path: '', redirectTo: 'listuser', pathMatch: 'full' }, 
       { path: 'listuser', component: ListuserComponent },
+      { path: 'customerlist', component: CustomerlistComponent },
       { path: 'onboarduser', component: OnboarduserComponent },
+      { path: 'modify', component: ModifyComponent },
+      {path:'modifycustomer',component:ModifycustomerComponent},
     ]
   },
   

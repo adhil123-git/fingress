@@ -29,7 +29,7 @@ h2 {
 
 .party-div,
 .user-div {
-    /* display: flex; */
+   
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
@@ -70,7 +70,7 @@ button {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+ 
     display: block;
     margin: 20px auto;
 }

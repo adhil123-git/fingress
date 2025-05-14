@@ -1,0 +1,42 @@
+<table mat-table [dataSource]="dataSource"> 
+ 
+  <ng-container matColumnDef="emailaddress">
+    <th mat-header-cell *matHeaderCellDef>Email address </th>
+    <td mat-cell *matCellDef="let customer"> {{ customer.EMAIL_ADDRESS }}  </td>
+  </ng-container>
+
+
+
+
+
+  <ng-container matColumnDef="Partycode">
+    <th mat-header-cell *matHeaderCellDef> Partycode </th>
+    <td mat-cell *matCellDef="let customer"> {{ customer.PARTY_CODE }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="PartyName">
+    <th mat-header-cell *matHeaderCellDef> PartyName </th>
+    <td mat-cell *matCellDef="let customer"> {{ customer.PARTY_NAME}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Mobilenumber">
+    <th mat-header-cell *matHeaderCellDef> Mobile number</th>
+    <td mat-cell *matCellDef="let customer"> {{ customer.MOBILE_NUMBER}} </td>
+  </ng-container>
+
+ <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let customer"><button mat-button class="edit"  (click)="navigateToModify(customer)">✎</button>
+    <button mat-button class="delete"  (click)="deleterow(customer)" >🗑️</button> </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-style"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+<mat-paginator 
+ [pageSizeOptions]="[ 10, 20,30]"
+showFirstLastButtons>
+</mat-paginator>
