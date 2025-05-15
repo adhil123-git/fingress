@@ -14,9 +14,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { CustomerlistComponent } from './customerlist/customerlist.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatButton } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 import { ModifyComponent } from './modify/modify.component';
 import { ModifycustomerComponent } from './modifycustomer/modifycustomer.component';
+import { SessionDialogComponent } from './session-dialog/session-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +32,9 @@ import { ModifycustomerComponent } from './modifycustomer/modifycustomer.compone
     LandingpageComponent,
     CustomerlistComponent,
     ModifyComponent,
-    ModifycustomerComponent
+    ModifycustomerComponent,
+    SessionDialogComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,11 @@ import { ModifycustomerComponent } from './modifycustomer/modifycustomer.compone
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDialogModule,
+    MatInputModule
+
+
+
  
   ],
   providers: [],

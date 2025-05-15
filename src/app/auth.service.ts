@@ -42,4 +42,22 @@ export class AuthService {
     })
     return this.http.post(`${this.apiUrl}/customer/modify`, data, { headers });
   }
+  modifyuser(data: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    })
+    return this.http.post(`${this.apiUrl}/user/modify`, data, { headers });
+  }
+  activecustomer(data: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    })
+    return this.http.post(`${this.apiUrl}/customer/active`, data, { headers });
+  }
+  inactivecustomer(data: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    })
+    return this.http.post(`${this.apiUrl}/customer/inActive`, data, { headers });
+  }
 }

@@ -16,13 +16,13 @@ table {
     border-bottom: 1px solid;
     text-align: center;
   }
-  .mat-column-updatedOn{
+  .mat-column-email{
     width: 30px;
  
     border-bottom: 1px solid;
     text-align: center;
   }
-  .mat-column-status{
+  .mat-column-mobilenumber{
     width: 30px;
   
     border-bottom: 1px solid;

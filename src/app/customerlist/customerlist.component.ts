@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { SessionDialogComponent } from '../session-dialog/session-dialog.component';
 
 @Component({
   selector: 'app-customerlist',
@@ -10,12 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./customerlist.component.css']
 })
 export class CustomerlistComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['PartyName','Partycode','Mobilenumber', 'emailaddress','action'];
+  displayedColumns: string[] = ['PartyName','Partycode','Mobilenumber', 'emailaddress','Status','action'];
   dataSource = new MatTableDataSource<any>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.fetchCustomers();
@@ -28,13 +30,7 @@ export class CustomerlistComponent implements OnInit, AfterViewInit {
   fetchCustomers(): void {
     const tabledata = {
       entityTypeCode: 'API_GW_PARTY',
-      filters: [
-        {
-          key: 'activeCode',
-          operator: 'eq',
-          value: 'ACTIVE'
-        }
-      ],
+      filters: [],
       pagination: {
         pageSize: 1000,
         pageIndex: 0
@@ -70,6 +66,16 @@ export class CustomerlistComponent implements OnInit, AfterViewInit {
         partyEmailaddress: customer.EMAIL_ADDRESS,
         partyMobilenumber: customer.MOBILE_NUMBER,
       }
+    });
+  }
+
+  openSessionDialog(customer: any): void {
+    const dialogRef = this.dialog.open(SessionDialogComponent, {
+      data: { partycode:customer.PARTY_CODE, partyname:customer.PARTY_NAME,status:customer.ACTIVE_CODE }
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.fetchCustomers(); 
     });
   }
 }

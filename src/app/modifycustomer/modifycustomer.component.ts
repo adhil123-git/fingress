@@ -43,7 +43,7 @@ export class ModifycustomerComponent {
       }
     }
 
-    this. authService.modifycustomer(payload).subscribe({
+    this.authService.modifycustomer(payload).subscribe({
       next: (res) => {
         console.log(res);
          if (res.status=="success") {

@@ -2,10 +2,16 @@
     <form #modifyform="ngForm"   (ngSubmit)="onSubmit(modifyform)">
         <h2>Modify User</h2>
         <div>
-            <label for="userName">User Name</label>
-            <input type="text" id="userName" name="userName" [(ngModel)]="userName" #userNameValidation="ngModel"
+            <label for="firstname">First name </label>
+            <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" #firstnameValidation="ngModel"
                 required />
-                  <small *ngIf="userNameValidation.invalid && userNameValidation.touched" style="color: red;">Party Code is required</small>
+                  <small *ngIf="firstnameValidation.invalid && firstnameValidation.touched" style="color: red;">First name  is required</small>
+        </div>
+        <div>
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" #lastNameValidation="ngModel"
+                required />
+                  <small *ngIf="lastNameValidation.invalid &&lastNameValidation.touched" style="color: red;">Last name is required</small>
         </div>
 
         <div> 
@@ -13,6 +19,18 @@
             <input type="text" id="userId" name="userId" [(ngModel)]="userId" #userCodeValidation="ngModel"
                 required />
                  <small *ngIf="userCodeValidation.invalid &&userCodeValidation.touched" style="color: red;">Party Code is required</small>
+        </div>
+         <div> 
+            <label for="userEmailaddress">Email</label>
+            <input type="text" id="userEmailaddress" name="userEmailaddress" [(ngModel)]="userEmailaddress" #userEmailaddressValidation="ngModel"
+                required />
+                 <small *ngIf="userEmailaddressValidation.invalid && userEmailaddressValidation.touched" style="color: red;">Email address is required</small>
+        </div>
+          <div> 
+            <label for=" userMobilenumber">Mobile Number</label>
+            <input type="text" id=" userMobilenumber" name=" userMobilenumber" [(ngModel)]="userMobilenumber" #userMobilenumberValidation="ngModel"
+                required />
+                <small *ngIf=" userMobilenumberValidation.invalid &&  userMobilenumberValidation.touched" style="color: red;">Mobile number is required</small>
         </div>
         <button type="submit">Save</button>
         <button type="button" (click)="back()">Back</button>

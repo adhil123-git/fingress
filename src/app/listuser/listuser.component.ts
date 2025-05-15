@@ -4,13 +4,14 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-listuser',
   templateUrl: './listuser.component.html',
   styleUrls: ['./listuser.component.css']
 })
 export class ListuserComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['Username', 'UserId', 'status', 'ActiveSession', 'updatedOn', 'action'];
+  displayedColumns: string[] = ['Username', 'UserId', 'mobilenumber','email','ActiveSession','action'];
 
   dataSource = new MatTableDataSource<any>(); 
  
@@ -68,12 +69,13 @@ export class ListuserComponent implements OnInit, AfterViewInit {
 navigateToModify(user: any): void {
   this.router.navigate(['/landingpage/modify'], { queryParams: {
       userName: user.PARTY_NAME,
-      userId: user.PARTY_CODE
+      userId: user.PARTY_CODE,
+      userEmailaddress: user.EMAIL_ADDRESS,
+      userMobilenumber: user.MOBILE_NUMBER,
     }}); 
 }
 
 }
-
 
 
 

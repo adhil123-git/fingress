@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-modify',
@@ -9,32 +10,50 @@ import { NgForm } from '@angular/forms';
 })
 export class ModifyComponent implements OnInit {
   userName: any= '';
- userId: any = '';
+  firstname: any= '';
+  lastName: any= '';
+  userId: any = '';
+  userEmailaddress: any = '';
+  userMobilenumber: any = '';
 
-  constructor(private route: ActivatedRoute ,private router:Router) {}
+  constructor(private route: ActivatedRoute ,private router:Router,private authService:AuthService) {}
 
   ngOnInit(): void {
     
     this.route.queryParams.subscribe(params => {
-      this.userName = params['userName'];
+      const username=params['userName'];
+      this.firstname = username.split(' ')[0];
+      this.lastName = username.split(' ')[1];
       this.userId = params['userId'];
+      this.userEmailaddress = params['userEmailaddress'];
+      this.userMobilenumber = params['userMobilenumber'];
     });
   }
 
 
 onSubmit(modifyform:NgForm) {
-  const payload={
-    
-  "actionCode": "update",
-  "userData": {
-    "userId": "168",
-    "firstName": "John",
-    "lastName": "R",
-    "emailAddress": "test@gmail.com",
-    "mobileNumber": "8912314112"
+  const payload = {
+    actionCode: "update",
+    userData: {
+      userId: this.userId,
+      firstName: this.firstname,
+      lastName: this.lastName,
+      emailAddress: this.userEmailaddress,
+      mobileNumber: this.userMobilenumber,
+      parentPartyCode: "ABC"
+    }
   }
+  this.authService.modifyuser(payload).subscribe({
+    next:(res) => {
+       console.log(res);
+       alert(res.message)
 
-  }
+    },
+    error:(err) => {
+      console.log(err);
+      
+    }
+  });
 }
 
 
