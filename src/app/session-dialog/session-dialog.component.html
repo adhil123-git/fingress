@@ -2,13 +2,16 @@
 <mat-dialog-content>
   <p>Party name : {{data.partyname}}</p>
   <p>Party Code : {{data.partycode}}</p>
-</mat-dialog-content>
   <mat-form-field class="form">
-      <mat-label>Reason for change the status</mat-label>
+      <mat-label> Reason </mat-label>
       <input matInput [(ngModel)]="reason" />
+        <div *ngIf="reasonTouched && !reason " style="color: red; font-size: 13px;margin-left:25px; "> Reason is required*</div>
     </mat-form-field>
-<mat-dialog-actions>
-  <button *ngIf="data.status === 'IN_ACTIVE'" mat-button class="act-btn" (click)="active()">Active</button>
-  <button  *ngIf="data.status=== 'ACTIVE'" mat-button class="inact-btn" (click)="inactive()">Deactive</button>
-  <button mat-button class="back-btn" (click)="back()">Back</button>
+</mat-dialog-content>
+  
+  
+<mat-dialog-actions  align="end">
+  <button *ngIf="data.status === 'IN_ACTIVE'" mat-button (click)="active()">Active</button>
+  <button  *ngIf="data.status=== 'ACTIVE'" mat-button  (click)="inactive()">Deactive</button>
+ <button mat-button mat-dialog-close>Close</button>
 </mat-dialog-actions>

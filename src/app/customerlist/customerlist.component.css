@@ -1,45 +1,67 @@
- .mat-column-emailaddress {
-    width: 30px;
-    border-bottom: 1px solid;
-    text-align: center;
-  }
 
- .mat-column-Partycode {
-    width: 30px;
-    border-bottom: 1px solid;
-    text-align: center;
-  }
- .mat-column-action{
-    width: 30px;
-    border-bottom: 1px solid;
-    text-align: center;
-  }
- .mat-column-Status{
-    width: 30px;
-    border-bottom: 1px solid;
-    text-align: center;
-  }
- .mat-column-PartyName{
-    width: 30px;
-    border-bottom: 1px solid;
-    text-align: center;
-  }
- .mat-column-Mobilenumber{
-    width: 30px;
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .edit{
-    padding: 3px;
-    border-radius: 5px;
-  }
-  .delete{
-    padding: 3px;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
-.header-style {
-  background-color:  #d1d8e0; 
-  color: white; 
-  font-weight: bold; 
+.mat-column-PartyName,
+.mat-column-Mobilenumber,
+.mat-column-Status,
+.mat-column-changebutton,
+.mat-column-edit,
+.mat-column-delete,
+.mat-column-emailaddress,
+.mat-column-Partycode,
+.mat-column-action {
+  width: 120px; 
+  text-align: left;
+  border:#bdbdbd 1px solid;
+}
+
+
+ .header-style {
+   background-color: #d1d8e0;
+   color: white;
+   font-weight: bold;
+   text-align:left;
+ }
+
+ .search {
+   margin-left: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   padding: 10px;
+   background-color: #ffffff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ .bar {
+  display: flex;
+  gap: 12px;
+  
+}
+ input{
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+    gap:10px;
+    box-sizing: border-box;
+    width: 50%;
+ }
+table.mat-table {
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+ margin-left: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-collapse: collapse;
+  
+}
+.mat-column-changebutton,
+.mat-column-edit,
+.mat-column-delete {
+  text-align: center;
+  vertical-align: middle;
 }

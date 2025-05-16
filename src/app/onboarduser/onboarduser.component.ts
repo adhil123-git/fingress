@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-onboarduser',
   templateUrl: './onboarduser.component.html',
@@ -22,7 +23,7 @@ export class OnboarduserComponent {
 
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
 
   onSubmit(onboardingForm: NgForm) {
 
@@ -51,17 +52,20 @@ export class OnboarduserComponent {
     console.log(sendingdata);
     this.authService.onBoarding(sendingdata).subscribe({
       next: (response: any) => {
-        alert(response.message);
+        this.snackBar.open(response.message, 'Close', {
+          duration: 2000,
+          verticalPosition: 'top',
+        });
+
         onboardingForm.reset();
       },
       error: (err) => {
         console.log(err);
-        alert(err.error[0].errors[0].message);
-        alert(err.error[0].errors[1].message);
-        alert(err.error[0].errors[2].message);
-        alert(err.error[0].errors[3].message);
-        alert(err.error[0].errors[4].message);
-        alert(err.error[0].errors[5].message);
+        this.snackBar.open((err.error[0].errors[0].message), 'Close', {
+          duration: 2500,
+          verticalPosition: 'top',
+        });
+
       }
     });
   }

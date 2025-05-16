@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-modify',
@@ -16,7 +17,7 @@ export class ModifyComponent implements OnInit {
   userEmailaddress: any = '';
   userMobilenumber: any = '';
 
-  constructor(private route: ActivatedRoute ,private router:Router,private authService:AuthService) {}
+  constructor(private route: ActivatedRoute ,private router:Router,private authService:AuthService,private snackBar:MatSnackBar) {}
 
   ngOnInit(): void {
     
@@ -46,12 +47,18 @@ onSubmit(modifyform:NgForm) {
   this.authService.modifyuser(payload).subscribe({
     next:(res) => {
        console.log(res);
-       alert(res.message)
+    this.snackBar.open(res.message, 'Close', {
+          duration: 2000,
+          verticalPosition: 'top',
+        });
 
     },
     error:(err) => {
       console.log(err);
-      
+      this.snackBar.open('failed to update the customer', 'Close', {
+          duration: 2000,
+          verticalPosition: 'top',
+        });
     }
   });
 }

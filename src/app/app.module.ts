@@ -20,7 +20,9 @@ import { ModifycustomerComponent } from './modifycustomer/modifycustomer.compone
 import { SessionDialogComponent } from './session-dialog/session-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import{MatIconModule} from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -47,7 +49,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatButtonModule,
+   
 
 
 

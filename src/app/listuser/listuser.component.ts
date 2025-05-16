@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ListuserComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; 
 
-  constructor(private authService: AuthService, private router:Router) {}
+  constructor(private authService: AuthService, private router:Router,private snackBar:MatSnackBar) {}
 
   ngOnInit(): void {
     this.fetchUsers(); 
@@ -32,11 +33,7 @@ export class ListuserComponent implements OnInit, AfterViewInit {
     const tabledata = {
       entityTypeCode: 'API_GW_PARTY',
       filters: [
-        {
-          key: 'activeCode',
-          operator: 'eq',
-          value: 'ACTIVE'
-        }
+       
       ],
       pagination: {
         pageSize: 1000,
@@ -62,7 +59,10 @@ export class ListuserComponent implements OnInit, AfterViewInit {
   deleterow(row: any): void {
     const currentdata = this.dataSource.data;
     this.dataSource.data = currentdata.filter(user => user !== row); 
-    alert('User deleted successfully');
+  this.snackBar.open('User deleted successfully', 'Close', {
+              duration: 2000,
+              verticalPosition: 'top',
+            });
   }
 
 
