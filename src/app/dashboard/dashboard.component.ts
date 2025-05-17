@@ -84,7 +84,6 @@ export class DashboardComponent implements OnInit {
         }
         
       }
-
     });
   }
 
@@ -123,8 +122,8 @@ export class DashboardComponent implements OnInit {
 
   createuserChart() {
 
-    const activeusers = this.userData.filter(user=> user.ACTIVE_CODE === 'ACTIVE').length;
-    const inactiveusers = this. userData.filter(user => user.ACTIVE_CODE === 'IN_ACTIVE').length;
+    const activeuser = this.userData.filter(user=> user.ACTIVE_CODE === 'ACTIVE').length;
+    const inactiveuser = this. userData.filter(user => user.ACTIVE_CODE === 'IN_ACTIVE').length;
    
 
     this.userchart = new Chart("userChart", {
@@ -135,7 +134,7 @@ export class DashboardComponent implements OnInit {
         labels: ['Active', 'Inactive'],
         datasets: [{
 
-          data: [activeusers, inactiveusers],
+          data: [activeuser, inactiveuser],
           backgroundColor: [
             '#4394E5',
             '#87BB62',
@@ -160,7 +159,7 @@ export class DashboardComponent implements OnInit {
 
     });
   }
-getCustomerNameCounts(): { [name: string]: number } {
+getcustomer(): { [name: string]: number } {
   const counts: { [name: string]: number } = {};
   this.customerData.forEach((customer: any) => {
     const name = customer.PARTY_NAME;
@@ -168,26 +167,20 @@ getCustomerNameCounts(): { [name: string]: number } {
   });
   return counts;
 }
-// getCustomerNameCounts(): { [name: string]: number } {
-//   return this.customerData.reduce((acc: { [name: string]: number }, customer: any) => {
-//     const name = customer.PARTY_NAME;
-//     acc[name] = (acc[name] || 0) + 1;
-//     return acc;
-//   }, {});
-// }
+
 createNameCountChart() {
-  const nameCounts = this.getCustomerNameCounts();
-  const labels = Object.keys(nameCounts);
-  const data = Object.values(nameCounts);
+  const Count = this.getcustomer();
+  const label = Object.keys(Count); 
+  const data = Object.values(Count);
 
   this.nameCountChart = new Chart("nameCountChart", {
     type: 'pie',
     data: {
-      labels: labels,
+      labels: label,
       datasets: [{
         data: data,
         backgroundColor: [
-          '#4394E5','#87BB62','red','blue'
+          '#FF6384','#FF9F40','#FFCD56','#4BC0C0','#36A2EB','#9966FF','#FF6384','#FF6384','#FF9F40','#FFCD56',
         ],
         borderWidth: 1,
         hoverOffset: 5

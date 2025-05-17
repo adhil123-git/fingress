@@ -23,7 +23,7 @@ export class LandingpageComponent {
         this.snackBar.open(response.message, 'Close', {
           duration: 2000,
           verticalPosition: 'top',
-          panelClass: ['snackbar']
+        
         });
       },
       error: (err) => {

@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CustomerlistComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['PartyName', 'Partycode', 'Mobilenumber', 'emailaddress', 'Status','changebutton','edit','delete'];
   dataSource = new MatTableDataSource<any>();
-allCustomers: any[] = [];
+  allCustomers: any[] = [];
 
 filters= {
   partyName: '',
@@ -53,8 +53,8 @@ filters= {
 
     this.authService.fetchtablecustomer(tabledata).subscribe({
       next: (res: any) => {
-         this.allCustomers = res.partiesList;
         this.dataSource.data = res.partiesList;
+        this.allCustomers = res.partiesList;
       },
       error: (err: any) => {
         console.error(err);
@@ -72,7 +72,7 @@ applyFilters(): void {
     (!this.filters.partyCode || (customer.PARTY_CODE || '').toLowerCase().includes(this.filters.partyCode.trim().toLowerCase())) &&
     (!this.filters.mobileNumber || (customer.MOBILE_NUMBER || '').toLowerCase().includes(this.filters.mobileNumber.trim().toLowerCase())) &&
     (!this.filters.emailAddress || (customer.EMAIL_ADDRESS || '').toLowerCase().includes(this.filters.emailAddress.trim().toLowerCase())) &&
-    (!this.filters.status || (customer.ACTIVE_CODE || '').toLowerCase() === this.filters.status.trim().toLowerCase())
+    (!this.filters.status || (customer.ACTIVE_CODE || '').toLowerCase() == this.filters.status.trim().toLowerCase())
   );
 }
   

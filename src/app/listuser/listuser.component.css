@@ -1,56 +1,26 @@
-table {
-    width: 100%;
-  }
- 
- 
-  .mat-column-Username {
-    width: 30px;
-    
-    border-bottom: 1px solid;
-    text-align: center;
-  }
 
-  .mat-column-UserId{
-    width: 30px;
-   
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .mat-column-email{
-    width: 30px;
- 
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .mat-column-mobilenumber{
-    width: 30px;
-  
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .mat-column-ActiveSession{
-    width: 30px;
-    
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .mat-column-action{
-    width: 30px;
-  
-    border-bottom: 1px solid;
-    text-align: center;
-  }
-  .edit{
-    padding: 3px;
-    border-radius: 5px;
-  }
-  .delete{
-    padding: 3px;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
 .header-style {
   background-color:  #d1d8e0; 
   color: white; 
   font-weight: bold; 
+}
+.mat-table {
+  border: 1px solid #bdbdbd;
+  margin-left: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+.mat-column-Username,
+.mat-column-UserId,
+.mat-column-email,
+.mat-column-mobilenumber,
+.mat-column-ActiveSession,
+.mat-column-emailaddress,
+.mat-column-action {
+  width: 120px; 
+  text-align: left;
+  border:#bdbdbd 1px solid;
 }

@@ -63,13 +63,6 @@ onSubmit(modifyform:NgForm) {
   });
 }
 
-
-
-
-
-
-
-
   back(){
     this.router.navigate(['/landingpage/listuser']);
   }
