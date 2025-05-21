@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { AuthService } from '../auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,10 +15,11 @@ export class DashboardComponent implements OnInit {
   customerData: any[] = [];
   userData: any[] = [];
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private route:ActivatedRoute ) { }
   ngOnInit(): void {
     this.fetchCustomers();
     this.fetchUsers();
+ 
   }
    fetchCustomers(): void {
     const tabledata = {

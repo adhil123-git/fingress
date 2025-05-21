@@ -23,8 +23,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import{MatIconModule} from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
-
-
+import { CsspracticeComponent } from './practice/csspractice/csspractice.component';
+import { CustomdirectiveDirective } from './customdirective.directive';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+import { CustompipePipe } from './custompipe.pipe';
+import { PracticeComponent } from './practice/practice/practice.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +41,11 @@ import { MatButtonModule } from '@angular/material/button';
     ModifyComponent,
     ModifycustomerComponent,
     SessionDialogComponent,
-    DashboardComponent
+    DashboardComponent,
+    CsspracticeComponent,
+    CustomdirectiveDirective,
+    CustompipePipe,
+    PracticeComponent
   ],
   imports: [
     BrowserModule,
@@ -53,13 +62,16 @@ import { MatButtonModule } from '@angular/material/button';
     MatSnackBarModule,
     MatIconModule,
     MatButtonModule,
+      ReactiveFormsModule
    
 
 
 
  
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

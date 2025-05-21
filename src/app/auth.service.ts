@@ -19,45 +19,45 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/signOut`,token);
   }
   onBoarding(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/onboarding/submit`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/onboarding/submit`, data);
   }
   fetchtableuser(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/user/list`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/user/list`, data);
   }
   fetchtablecustomer(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/customer/list`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/customer/list`, data);
   }
   modifycustomer(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/customer/modify`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/customer/modify`, data);
   }
   modifyuser(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/user/modify`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/user/modify`, data);
   }
   activecustomer(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/customer/active`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/customer/active`, data);
   }
   inactivecustomer(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
-    })
-    return this.http.post(`${this.apiUrl}/customer/inActive`, data, { headers });
+    // const headers = new HttpHeaders({
+    //   "client_id": "xzXNJFzxNtMvyLIFXCUL1005"
+    // })
+    return this.http.post(`${this.apiUrl}/customer/inActive`, data);
   }
 }

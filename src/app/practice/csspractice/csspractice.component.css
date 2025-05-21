@@ -1,0 +1,113 @@
+.navbar {
+  position: fixed;
+  top: 56px;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar ul {
+  display: flex;
+  margin: 0;
+}
+
+.navbar li {
+  list-style: none;
+  position: relative;
+  padding: 0 18px;
+  font-size: 18px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar li img {
+  width: 100px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  flex-direction: column;
+  min-width: max-content;
+
+}
+
+.wholediv {
+  margin-top: 110px;
+}
+
+.btn {
+  border-radius: 20px;
+  color: white;
+  background-color: rgb(51, 126, 224);
+  border-style: none;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-left: 480px;
+}
+
+.btn-2 {
+  border-radius: 20px;
+  color: black;
+  padding: 10px;
+}
+
+.btn-2:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.imgdiv {
+  margin-left: 150px;
+}
+
+.titlediv p {
+  font-size: 40px;
+  margin-left: 60px;
+  color: black;
+  font-family: fantasy;
+  padding: 5px;
+  justify-self: center;
+}
+
+.pretag {
+  margin-top: 50px;
+  justify-self: center;
+}
+
+.titlediv {
+  margin-top: 30px;
+}
+.ptag2 p{
+  justify-self: center;
+}
+.ptag2{
+  margin-top: 100px;
+}

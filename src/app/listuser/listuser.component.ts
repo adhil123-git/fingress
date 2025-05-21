@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./listuser.component.css']
 })
 export class ListuserComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['Username', 'UserId', 'mobilenumber','email','ActiveSession','action'];
+  displayedColumns: string[] = ['Username', 'UserId', 'mobilenumber','email','ActiveSession','edit','delete'];
 
   dataSource = new MatTableDataSource<any>(); 
  

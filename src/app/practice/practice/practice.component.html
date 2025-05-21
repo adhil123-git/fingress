@@ -1,0 +1,18 @@
+<h1> Custom Directives</h1>
+<h1>example for directives </h1>
+<p>ng class</p>
+<button (click)="isHighlighted = !isHighlighted">Highlight</button>
+<p [ngClass]="{'highlight': isHighlighted}">This paragraph uses ngClass attribute directive.</p>
+<p>ng style</p>
+
+<p [ngStyle]="{'color':'blue','font-size':'20px'}">This paragraph uses ngStyle attribute directive.</p>
+<p>example for custom directive</p>
+<p appCustomdirective>Hover over this paragraph to see the custom directive</p>
+<h2>Example for Custom Pipes</h2>
+<form [formGroup]="exampleForm" (ngSubmit)="onSubmit()">
+  <label for="number">Number: </label>
+  <input id="number" type="text" formControlName="number" required>
+  <button type="submit">Submit</button>
+</form>
+<p>After using custom pipe</p>
+<p>{{submittednumber|custompipe}}</p>

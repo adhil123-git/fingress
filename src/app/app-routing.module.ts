@@ -9,6 +9,8 @@ import { CustomerlistComponent } from './customerlist/customerlist.component';
 import { ModifyComponent } from './modify/modify.component';
 import { ModifycustomerComponent } from './modifycustomer/modifycustomer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CsspracticeComponent } from './practice/csspractice/csspractice.component';
+import { PracticeComponent } from './practice/practice/practice.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
@@ -23,10 +25,12 @@ const routes: Routes = [
      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
      {path:'dashboard',component:DashboardComponent},
       { path: 'listuser', component: ListuserComponent },
-      { path: 'customerlist', component: CustomerlistComponent },
+      { path: 'customerlist', component: CustomerlistComponent,title:'bluescope customer list' },
       { path: 'onboarduser', component: OnboarduserComponent },
       { path: 'modify', component: ModifyComponent },
       {path:'modifycustomer',component:ModifycustomerComponent},
+      {path:'csspractice',component:CsspracticeComponent},
+      {path:'practice',component:PracticeComponent}
     ]
   },
   

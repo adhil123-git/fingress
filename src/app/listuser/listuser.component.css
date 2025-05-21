@@ -19,7 +19,8 @@
 .mat-column-mobilenumber,
 .mat-column-ActiveSession,
 .mat-column-emailaddress,
-.mat-column-action {
+.mat-column-edit,
+.mat-column-delete {
   width: 120px; 
   text-align: left;
   border:#bdbdbd 1px solid;
