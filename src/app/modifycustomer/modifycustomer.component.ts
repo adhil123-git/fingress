@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../custom-services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-modifycustomer',

@@ -24,10 +24,10 @@ import{MatIconModule} from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { CsspracticeComponent } from './practice/csspractice/csspractice.component';
-import { CustomdirectiveDirective } from './customdirective.directive';
+import { CustomdirectiveDirective } from './custom-services/customdirective.directive';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './auth.interceptor';
-import { CustompipePipe } from './custompipe.pipe';
+import { AuthInterceptor } from './custom-services/auth.interceptor';
+import { CustompipePipe } from './custom-services/custompipe.pipe';
 import { PracticeComponent } from './practice/practice/practice.component';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({

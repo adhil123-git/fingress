@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../custom-services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
