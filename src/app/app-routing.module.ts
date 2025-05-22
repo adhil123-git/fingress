@@ -11,6 +11,8 @@ import { ModifycustomerComponent } from './modifycustomer/modifycustomer.compone
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CsspracticeComponent } from './practice/csspractice/csspractice.component';
 import { PracticeComponent } from './practice/practice/practice.component';
+import { PdfComponent } from './practice/pdf/pdf.component';
+import { StepperformComponent } from './practice/stepperform/stepperform.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
@@ -30,7 +32,9 @@ const routes: Routes = [
       { path: 'modify', component: ModifyComponent },
       {path:'modifycustomer',component:ModifycustomerComponent},
       {path:'csspractice',component:CsspracticeComponent},
-      {path:'practice',component:PracticeComponent}
+      {path:'practice',component:PracticeComponent},
+      {path:'pdf', component:PdfComponent},
+      {path:'stepperform', component:StepperformComponent}
     ]
   },
   

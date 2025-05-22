@@ -30,6 +30,23 @@ import { AuthInterceptor } from './custom-services/auth.interceptor';
 import { CustompipePipe } from './custom-services/custompipe.pipe';
 import { PracticeComponent } from './practice/practice/practice.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PdfComponent } from './practice/pdf/pdf.component';
+import { StepperformComponent } from './practice/stepperform/stepperform.component';
+
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatListModule} from '@angular/material/list';
+import { DatePipe } from '@angular/common';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +62,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CsspracticeComponent,
     CustomdirectiveDirective,
     CustompipePipe,
-    PracticeComponent
+    PracticeComponent,
+    PdfComponent,
+    StepperformComponent
   ],
   imports: [
     BrowserModule,
@@ -62,14 +81,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatIconModule,
     MatButtonModule,
-      ReactiveFormsModule
-   
-
-
-
- 
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatStepperModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatListModule,
+    MatGridListModule
+    
   ],
-  providers: [
+  providers: [[DatePipe],
     {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]

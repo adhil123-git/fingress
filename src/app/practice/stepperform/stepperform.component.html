@@ -1,0 +1,269 @@
+<div>
+  <h1>School Admission Form</h1>
+  <mat-stepper orientation="horizontal" [linear]="isLinear" #stepper labelPosition="bottom">
+    <mat-step>
+      <ng-template matStepLabel>About school</ng-template>
+      <h2>About school</h2>
+      <pre>
+  <strong>1. Mission, Vision, and Values:</strong>
+     Clearly state the school's mission, vision, and values.
+     This helps prospective families understand the school's philosophy and what it stands for.
+  <strong>2. Community and Engagement:</strong>
+     Gallery: Showcase the school's vibrant life through photos and videos of events,
+     classroom activities, and celebrations.
+     Testimonials: Include positive feedback from parents, students, and alumni.
+     Quote Gallery: Feature a variety of quotes from different members of the school community.
+        </pre>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>student detail</ng-template>
+      <form [formGroup]="studentdetail">
+        <mat-grid-list cols="4" gutterSize="30px">
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="firstname">First Name</mat-label>
+                  <input id="firstname" matInput formControlName="firstname" required />
+                </mat-form-field>
+              </div>
+              <br>
+              <div> <mat-form-field>
+                  <mat-label for="secondname">Second Name</mat-label>
+                  <input id="secondname" matInput formControlName="secondname" required />
+                </mat-form-field></div>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field style="width: 211px;">
+                  <mat-label for="dob">DOB</mat-label>
+                  <input id="dob" matInput [matDatepicker]="pickthedob" formControlName="dob" required />
+                  <mat-datepicker-toggle matIconPrefix [for]="pickthedob"></mat-datepicker-toggle>
+                  <mat-datepicker #pickthedob></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <br>
+              <div>
+                <mat-form-field>
+                  <mat-label for="age">Age</mat-label>
+                  <input id="age" matInput type="number" formControlName="age" required />
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="bloodgroup">Blood Group</mat-label>
+                  <select id="bloodgroup" matNativeControl formControlName="bloodgroup" required>
+                    <option value=""></option>
+                    <option value="A+ve">A+ve</option>
+                    <option value="A-ve">A-ve</option>
+                    <option value="B+ve">B+ve</option>
+                    <option value="B-ve">B-ve</option>
+                    <option value="AB+ve">AB+ve</option>
+                    <option value="AB-ve">AB-ve</option>
+                    <option value="O+ve">O+ve</option>
+                    <option value="O-ve">O-ve</option>
+                  </select>
+                </mat-form-field>
+              </div><br>
+              <div>
+                <h3>Select the gender</h3>
+                <mat-radio-group formControlName="gender">
+                  <mat-radio-button value="Male">Male</mat-radio-button>
+                  <mat-radio-button value="Female">Female</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div class="page-change-btn">
+          <button mat-button matStepperPrevious>Previous</button>
+          <button mat-button matStepperNext [disabled]="studentdetail.invalid">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Parent detail</ng-template>
+      <form [formGroup]="parentdetail">
+        <mat-grid-list cols="4" gutterSize="30px">
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="fathername">Father Name</mat-label>
+                  <input id="fathername" matInput formControlName="fathername" required />
+                </mat-form-field>
+              </div>
+              <br>
+              <div>
+                <mat-form-field>
+                  <mat-label for="mothername">Mother Name</mat-label>
+                  <input id="mothername" matInput formControlName="mothername" required />
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="mobilenumber">Mobile Number</mat-label>
+                  <input id="mobilenumber" matInput type="number" formControlName="mobilenumber"  minlength="10" maxlength="10" required />
+                </mat-form-field>
+              </div>
+              <br>
+              <div>
+                <mat-form-field>
+                  <mat-label for="address">Address</mat-label>
+                  <textarea id="address" matInput formControlName="address"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+      <div class="page-change-btn-2">
+        <button mat-button matStepperPrevious>Previous</button>
+        <button mat-button matStepperNext  [disabled]="parentdetail.invalid">Next</button>
+      </div>
+
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Previous school detail</ng-template>
+      <form [formGroup]="academicdetail">
+        <mat-grid-list cols="4" gutterSize="30px">
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="previousschool">Previous School Name</mat-label>
+                  <input id="previousschool" matInput formControlName="previousschool" required />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="standardselection">Standard in Previous School</mat-label>
+                  <select id="standardselection" matNativeControl formControlName="standardselection" required>
+                    <option value=""></option>
+                    <option value="none">none</option>
+                    <option value="LKG">LKG</option>
+                    <option value="UKG">UKG</option>
+                    <option value="I-std">I-std</option>
+                    <option value="II-std">II-std</option>
+                    <option value="III-std">III-std</option>
+                    <option value="IV-std">IV-std</option>
+                    <option value="V-std">V-std</option>
+                    <option value="VI-std">VI-std</option>
+                    <option value="VII-std">VII-std</option>
+                    <option value="VIII-std">VIII-std</option>
+                    <option value="IX-std">IX-std</option>
+                    <option value="X-std">X-std</option>
+                    <option value="XI-std">XI-std</option>
+                    <option value="XII-std">XII-std</option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="grade">Grade</mat-label>
+                  <select id="grade" matNativeControl formControlName="grade" required>
+                    <option value=""></option>
+                    <option value="none">none</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <mat-label for="activities">Extra Curricular Activities</mat-label>
+                  <textarea id="activities" matInput formControlName="activities"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+      <div class="page-change-btn-3">
+        <button mat-button matStepperPrevious>Previous</button>
+        <button mat-button matStepperNext  [disabled]="academicdetail.invalid">Next</button>
+      </div>
+
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Standard selection</ng-template>
+      <form [formGroup]="academicdetailforcurrentschool">
+        <mat-grid-list cols="4">
+          <mat-grid-tile>
+            <div>
+              <div>
+                <p>Select the standard for Admission</p>
+                <mat-form-field>
+                  <mat-label for="standardselectionforcurrentschool">Select the standard</mat-label>
+                  <select id="standardselectionforcurrentschool" matNativeControl
+                    formControlName="standardselectionforcurrentschool" required>
+                    <option value=""></option>
+                    <option value="LKG">LKG</option>
+                    <option value="UKG">UKG</option>
+                    <option value="I-std">I-std</option>
+                    <option value="II-std">II-std</option>
+                    <option value="III-std">III-std</option>
+                    <option value="IV-std">IV-std</option>
+                    <option value="V-std">V-std</option>
+                    <option value="VI-std">VI-std</option>
+                    <option value="VII-std">VII-std</option>
+                    <option value="VIII-std">VIII-std</option>
+                    <option value="IX-std">IX-std</option>
+                    <option value="X-std">X-std</option>
+                    <option value="XI-std">XI-std</option>
+                    <option value="XII-std">XII-std</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div>
+                <p>Group for XI and XII</p>
+                <mat-form-field>
+                  <mat-label for="groupselection">Group selection</mat-label>
+                  <select id="groupselection" matNativeControl formControlName="groupselection">
+                    <option value=""></option>
+                    <option value="none">None</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Computer science">Computer science</option>
+                    <option value="Commerce">Commerce</option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+     <div class="page-change-btn-4">
+      <div>
+        <button mat-button matStepperPrevious>Previous</button>
+      </div>
+      <button mat-button (click)="submitall()">Submit All</button>
+      <button mat-button (click)="generate()">Generate PDF</button>
+     </div>
+    </mat-step>
+  </mat-stepper>
+</div>

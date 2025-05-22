@@ -5,14 +5,14 @@ import { Directive, ElementRef, HostListener,inject} from '@angular/core';
 })  
 export class CustomdirectiveDirective {
  private el = inject(ElementRef);
- private highlight(color: string) {
-    this.el.nativeElement.style.backgroundColor = color;
+ private color(color: string) {
+    this.el.nativeElement.style.color = color;
   }
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight('red');
+    this.color('red');
   }
   @HostListener('mouseleave') onMouseLeave() {
-    this.highlight('');
+    this.color('');
   }
 
 }

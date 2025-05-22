@@ -1,0 +1,16 @@
+.div-1{
+    margin-left: 300px;
+    margin-top:200px;
+   
+}
+.btn-1{
+    margin-left: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(42, 84, 224) ;
+    
+}
+.btn-1:hover{
+    box-shadow:  -6px 6px 10px grey;
+}

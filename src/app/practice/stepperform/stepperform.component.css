@@ -1,0 +1,35 @@
+button {
+    padding: 10px;
+    width: auto;
+    height: auto;
+    color: white;
+    background-color: rgb(42, 84, 224);
+    margin: 10px;
+}
+
+button:hover {
+    box-shadow: -6px 6px 10px grey;
+}
+
+mat-grid-tile {
+    background:rgb(223, 221, 221);
+    border-radius: 10px;
+    margin-left: 150px;
+
+
+}
+
+.page-change-btn {
+    margin-left: 450px;
+    margin-top: 50px;
+
+}
+
+.page-change-btn-2,.page-change-btn-3 {
+    margin-left: 350px;
+    margin-top: 50px;
+}
+.page-change-btn-4{
+margin-left:180px;
+margin-top:20px;
+}

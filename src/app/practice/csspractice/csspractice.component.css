@@ -105,9 +105,41 @@
 .titlediv {
   margin-top: 30px;
 }
-.ptag2 p{
+
+.ptag2 p {
   justify-self: center;
 }
-.ptag2{
+
+.ptag2 {
   margin-top: 100px;
+}
+
+.contentdiv p {
+  width: 60%;
+  color:rgb(189, 184, 184);
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.contentdiv h2 {
+  font-weight: bold;
+ 
+}
+
+.contentdiv2 p {
+
+  width: 60%;
+  color:rgb(189, 184, 184);
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.contentdiv2 h2 {
+  font-weight: bold;
+}
+
+
+.wholecontentdiv {
+  display: flex;
+  margin-left: 200px;
+  margin-top: 50px;
+
 }
