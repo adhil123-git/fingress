@@ -60,4 +60,7 @@ export class AuthService {
     // })
     return this.http.post(`${this.apiUrl}/customer/inActive`, data);
   }
+  permission(data:any):Observable<any>{
+    return this.http.post(`${this.apiUrl}/organizations/products-permissions/list`,data);
+  }
 }

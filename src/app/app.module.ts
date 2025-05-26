@@ -37,15 +37,15 @@ import { StepperformComponent } from './practice/stepperform/stepperform.compone
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatListModule} from '@angular/material/list';
 import { DatePipe } from '@angular/common';
-
 import {MatGridListModule} from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CustompipePipe,
     PracticeComponent,
     PdfComponent,
-    StepperformComponent
+    StepperformComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -93,7 +94,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSelectModule,
     MatRadioModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [[DatePipe],

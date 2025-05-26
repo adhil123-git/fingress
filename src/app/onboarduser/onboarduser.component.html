@@ -4,30 +4,34 @@
         <div class="form-div1">
             <h2>Party Information</h2>
             <div class="party-div">
-                
 
+                <div>
                     <label for="partyName">Party Name</label>
                     <input type="text" id="partyName" name="partyName" [(ngModel)]="partyName"
                         #partyNameValidation="ngModel" required />
                     <small style="color: red;" *ngIf="partyNameValidation.invalid && partyNameValidation.touched">Party
                         name is required</small>
-
+                </div>
+                <div>
                     <label for="partycode">Party Code</label>
                     <input type="text" id="partycode" name="partycode" [(ngModel)]="partyCode"
                         #partyCodeValidation="ngModel" required />
                     <small *ngIf="partyCodeValidation.invalid && partyCodeValidation.touched" style="color: red;">Party
                         Code is required</small>
 
-                
+
+                </div>
+                <div>
 
 
-                
+
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" [(ngModel)]="email" #emailValidation="ngModel"
                         required />
                     <small *ngIf="emailValidation.invalid && emailValidation.touched" style="color: red;">Email is
                         required</small>
-
+                </div>
+                <div>
 
                     <label for="phone">Phone</label>
                     <input type="text" id="phone" name="phone" [(ngModel)]="phone" #phoneValidation="ngModel" required
@@ -38,52 +42,56 @@
                         <small style="color: red;" *ngIf="phoneValidation.errors?.['minlength']">Phone number must be 10
                             digits</small>
                     </div>
+                </div>
 
-                
             </div>
         </div>
         <div class="form-div2">
             <h2>User Information</h2>
             <div class="user-div">
+                <div>
 
-
-                <label for="userid">User ID</label>
-                <input type="text" id="userid" name="userid" [(ngModel)]="userid" #useridValidation="ngModel"
-                    required />
-                <small *ngIf="useridValidation.invalid && useridValidation.touched" style="color: red;">User ID is
-                    required</small>
-
-
-                <label for="firstname">First Name</label>
-                <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname"
-                    #firstnameValidation="ngModel" required />
-                <small *ngIf="firstnameValidation.invalid && firstnameValidation.touched" style="color: red;">First
-                    Name is required</small>
-
-
-                <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" #lastnameValidation="ngModel"
-                    required />
-                <small *ngIf="lastnameValidation.invalid && lastnameValidation.touched" style="color: red;">Last
-                    Name is required</small>
-
-
-                <label for="useremail">User Email</label>
-                <input type="email" id="useremail" name="useremail" [(ngModel)]="useremail"
-                    #useremailValidation="ngModel" required />
-                <small *ngIf="useremailValidation.invalid && useremailValidation.touched" style="color: red;">User
-                    Email is required</small>
-
-
-                <label for="userphone">User Phone</label>
-                <input type="text" id="userphone" name="userphone" [(ngModel)]="userphone"
-                    #userphoneValidation="ngModel" required maxlength="10" minlength="10" />
-                <div *ngIf="userphoneValidation.invalid && userphoneValidation.touched">
-                    <small style="color: red;" *ngIf="userphoneValidation.errors?.['required']">User Phone number is
+                    <label for="userid">User ID</label>
+                    <input type="text" id="userid" name="userid" [(ngModel)]="userid" #useridValidation="ngModel"
+                        required />
+                    <small *ngIf="useridValidation.invalid && useridValidation.touched" style="color: red;">User ID is
                         required</small>
-                    <small style="color: red;" *ngIf="userphoneValidation.errors?.['minlength']">User Phone number
-                        must be 10 digits</small>
 
+                </div>
+                <div>
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname"
+                        #firstnameValidation="ngModel" required />
+                    <small *ngIf="firstnameValidation.invalid && firstnameValidation.touched" style="color: red;">First
+                        Name is required</small>
+                </div>
+                <div>
+
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname"
+                        #lastnameValidation="ngModel" required />
+                    <small *ngIf="lastnameValidation.invalid && lastnameValidation.touched" style="color: red;">Last
+                        Name is required</small>
+
+                </div>
+                <div>
+                    <label for="useremail">User Email</label>
+                    <input type="email" id="useremail" name="useremail" [(ngModel)]="useremail"
+                        #useremailValidation="ngModel" required />
+                    <small *ngIf="useremailValidation.invalid && useremailValidation.touched" style="color: red;">User
+                        Email is required</small>
+                </div>
+                <div>
+
+                    <label for="userphone">User Phone</label>
+                    <input type="text" id="userphone" name="userphone" [(ngModel)]="userphone"
+                        #userphoneValidation="ngModel" required maxlength="10" minlength="10" />
+                    <div *ngIf="userphoneValidation.invalid && userphoneValidation.touched">
+                        <small style="color: red;" *ngIf="userphoneValidation.errors?.['required']">User Phone number is
+                            required</small>
+                        <small style="color: red;" *ngIf="userphoneValidation.errors?.['minlength']">User Phone number
+                            must be 10 digits</small>
+                    </div>
                 </div>
             </div>
             <div>

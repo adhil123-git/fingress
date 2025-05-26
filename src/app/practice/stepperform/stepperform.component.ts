@@ -17,7 +17,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class StepperformComponent {
   isLinear = true;
   wholedata: any = {};
-
+standardoption=['LKG','UKG','I STD','II STD','III STD','IV STD','V STD','VI STD','VII STD','VIII STD','XI STD','X STD','XI STD','XII STD']
 
   constructor(private fb: FormBuilder, private dp: DatePipe,private snackbar:MatSnackBar) { }
 
@@ -33,7 +33,7 @@ export class StepperformComponent {
   parentdetail = this.fb.group({
     fathername: ['', Validators.required],
     mothername: ['', Validators.required],
-    mobilenumber: ['', [Validators.min(10), Validators.max(10)]],
+    mobilenumber: ['', [Validators.required]],
     address: ['', Validators.required]
   });
 

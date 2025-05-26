@@ -159,21 +159,7 @@
                   <mat-label for="standardselection">Standard in Previous School</mat-label>
                   <select id="standardselection" matNativeControl formControlName="standardselection" required>
                     <option value=""></option>
-                    <option value="none">none</option>
-                    <option value="LKG">LKG</option>
-                    <option value="UKG">UKG</option>
-                    <option value="I-std">I-std</option>
-                    <option value="II-std">II-std</option>
-                    <option value="III-std">III-std</option>
-                    <option value="IV-std">IV-std</option>
-                    <option value="V-std">V-std</option>
-                    <option value="VI-std">VI-std</option>
-                    <option value="VII-std">VII-std</option>
-                    <option value="VIII-std">VIII-std</option>
-                    <option value="IX-std">IX-std</option>
-                    <option value="X-std">X-std</option>
-                    <option value="XI-std">XI-std</option>
-                    <option value="XII-std">XII-std</option>
+                    <option *ngFor="let std of standardoption"   [value]="std">{{std}}</option>
                   </select>
                 </mat-form-field>
               </div>
@@ -223,20 +209,7 @@
                   <select id="standardselectionforcurrentschool" matNativeControl
                     formControlName="standardselectionforcurrentschool" required>
                     <option value=""></option>
-                    <option value="LKG">LKG</option>
-                    <option value="UKG">UKG</option>
-                    <option value="I-std">I-std</option>
-                    <option value="II-std">II-std</option>
-                    <option value="III-std">III-std</option>
-                    <option value="IV-std">IV-std</option>
-                    <option value="V-std">V-std</option>
-                    <option value="VI-std">VI-std</option>
-                    <option value="VII-std">VII-std</option>
-                    <option value="VIII-std">VIII-std</option>
-                    <option value="IX-std">IX-std</option>
-                    <option value="X-std">X-std</option>
-                    <option value="XI-std">XI-std</option>
-                    <option value="XII-std">XII-std</option>
+                    <option *ngFor="let std of standardoption"   [value]="std">{{std}}</option>
                   </select>
                 </mat-form-field>
               </div>

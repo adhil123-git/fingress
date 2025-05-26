@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
@@ -13,6 +13,7 @@ import { CsspracticeComponent } from './practice/csspractice/csspractice.compone
 import { PracticeComponent } from './practice/practice/practice.component';
 import { PdfComponent } from './practice/pdf/pdf.component';
 import { StepperformComponent } from './practice/stepperform/stepperform.component';
+import { AuthenticationGuard } from './custom-services/authentication.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path: 'landingpage',
     component: LandingpageComponent,
+    // canActivate: [AuthenticationGuard],
     children: [
      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
      {path:'dashboard',component:DashboardComponent},
@@ -34,7 +36,8 @@ const routes: Routes = [
       {path:'csspractice',component:CsspracticeComponent},
       {path:'practice',component:PracticeComponent},
       {path:'pdf', component:PdfComponent},
-      {path:'stepperform', component:StepperformComponent}
+      {path:'stepperform', component:StepperformComponent},
+     
     ]
   },
   
